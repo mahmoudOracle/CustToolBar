@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:componentDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" componentVar="comp" definition="private"
+                 xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component">
+    <af:toolbar id="dc_t1">
+        <af:group id="dc_g1">
+            <af:button id="dc_b9" shortDesc="info" icon="/images/information.png" action="#{dml.information}"/>
+            <af:facetRef facetName="Add Area"/>
+            <af:spacer width="10" height="10" id="dc_s3"/>
+            <af:button id="dc_b1" shortDesc="Delete" icon="/images/remove.png" action="#{dml.Delete}" immediate="true"
+                       visible="#{attrs.DMLDeleteVisable}">
+                <af:setPropertyListener from="#{attrs.IteratorName}" to="#{dml.methodNameorIteratorBinding}"
+                                        type="action"/>
+            </af:button>
+            <af:button id="dc_b2" shortDesc="Add" icon="/images/add.png" action="#{dml.CreateInsert}"
+                       visible="#{attrs.DMLInsertVisable}">
+                <af:setPropertyListener from="#{attrs.IteratorName}" to="#{dml.methodNameorIteratorBinding}"
+                                        type="action"/>
+                <af:setPropertyListener from="#{attrs.InsertType}" to="#{dml.insertType}" type="action"/>
+            </af:button>
+            <af:spacer width="5" height="10" id="dc_s1"/>
+            <af:separator id="dc_s4"/>
+            <af:button id="dc_b3" shortDesc="First" icon="/images/First.png" action="#{dml.First}"
+                       visible="#{attrs.NavigationVisable}">
+                <af:setPropertyListener from="#{attrs.IteratorName}" to="#{dml.methodNameorIteratorBinding}"
+                                        type="action"/>
+            </af:button>
+            <af:button id="dc_b4" shortDesc="Previous" icon="/images/back.png" action="#{dml.Previous}"
+                       visible="#{attrs.NavigationVisable}">
+                <af:setPropertyListener from="#{attrs.IteratorName}" to="#{dml.methodNameorIteratorBinding}"
+                                        type="action"/>
+            </af:button>
+            <af:button id="dc_b5" shortDesc="Next" icon="/images/next.png" action="#{dml.Next}"
+                       visible="#{attrs.NavigationVisable}">
+                <af:setPropertyListener from="#{attrs.IteratorName}" to="#{dml.methodNameorIteratorBinding}"
+                                        type="action"/>
+            </af:button>
+            <af:button id="dc_b6" shortDesc="Last" icon="/images/Last.png" action="#{dml.Last}"
+                       visible="#{attrs.NavigationVisable}">
+                <af:setPropertyListener from="#{attrs.IteratorName}" to="#{dml.methodNameorIteratorBinding}"
+                                        type="action"/>
+            </af:button>
+            <af:spacer width="5" height="10" id="dc_s2"/>
+        </af:group>
+        <af:group id="dc_g2">
+            <af:button id="dc_b8" shortDesc="Commit" icon="/images/accept.png" action="#{dml.Commit}"
+                       visible="#{attrs.DMLCommit}">
+                <af:setPropertyListener from="#{attrs.IteratorName}" to="#{dml.methodNameorIteratorBinding}"
+                                        type="action"/>
+            </af:button>
+            <af:button id="dc_b7" shortDesc="Rollback" icon="/images/repeat.png" action="#{dml.Rollback}"
+                       immediate="true" visible="#{attrs.DMLRollback}">
+                <af:setPropertyListener from="#{attrs.IteratorName}" to="#{dml.methodNameorIteratorBinding}"
+                                        type="action"/>
+            </af:button>
+        </af:group>
+    </af:toolbar>
+    <af:xmlContent>
+        <afc:component>
+            <afc:description/>
+            <afc:display-name>CTB</afc:display-name>
+            <afc:facet>
+                <afc:facet-name>Add Area</afc:facet-name>
+            </afc:facet>
+            <afc:attribute>
+                <afc:attribute-name>NavigationVisable</afc:attribute-name>
+                <afc:attribute-class>java.lang.Boolean</afc:attribute-class>
+                <afc:default-value>true</afc:default-value>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>IteratorName</afc:attribute-name>
+                <afc:attribute-class>java.lang.String</afc:attribute-class>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>InsertType</afc:attribute-name>
+                <afc:attribute-class>java.lang.Boolean</afc:attribute-class>
+                <afc:default-value>true</afc:default-value>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>DMLInsertVisable</afc:attribute-name>
+                <afc:attribute-class>java.lang.String</afc:attribute-class>
+                <afc:default-value>true</afc:default-value>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>DMLUpdateVisable</afc:attribute-name>
+                <afc:attribute-class>java.lang.Boolean</afc:attribute-class>
+                <afc:default-value>true</afc:default-value>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>DMLDeleteVisable</afc:attribute-name>
+                <afc:attribute-class>java.lang.Boolean</afc:attribute-class>
+                <afc:default-value>true</afc:default-value>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>DMLCommit</afc:attribute-name>
+                <afc:attribute-class>java.lang.Boolean</afc:attribute-class>
+                <afc:default-value>true</afc:default-value>
+            </afc:attribute>
+            <afc:attribute>
+                <afc:attribute-name>DMLRollback</afc:attribute-name>
+                <afc:attribute-class>java.lang.Boolean</afc:attribute-class>
+                <afc:default-value>true</afc:default-value>
+            </afc:attribute>
+            <afc:component-extension>
+                <afc:component-tag-namespace>CTB</afc:component-tag-namespace>
+                <afc:component-taglib-uri>/CTB</afc:component-taglib-uri>
+            </afc:component-extension>
+        </afc:component>
+    </af:xmlContent>
+</af:componentDef>
