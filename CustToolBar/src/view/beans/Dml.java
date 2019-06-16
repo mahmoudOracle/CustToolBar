@@ -8,6 +8,9 @@ public class Dml {
     private String MethodNameorIteratorBinding = "";
     private String InsertType = "";
 
+    /**
+     * @return
+     */
     public String CreateInsert() {
         if (getMethodNameorIteratorBinding() != null) {
             RowSetIterator Schedual =
@@ -27,6 +30,9 @@ public class Dml {
         return null;
     }
 
+    /**
+     * @return
+     */
     public String Delete() {
         if (getMethodNameorIteratorBinding() != null) {
             (mybean.AccessIteratorBinding(getMethodNameorIteratorBinding())).getRowSetIterator().removeCurrentRow();
@@ -34,6 +40,9 @@ public class Dml {
         return null;
     }
 
+    /**
+     * @return
+     */
     public String Next() {
         if (getMethodNameorIteratorBinding() != null) {
             (mybean.AccessIteratorBinding(getMethodNameorIteratorBinding())).getRowSetIterator().next();
@@ -41,6 +50,9 @@ public class Dml {
         return null;
     }
 
+    /**
+     * @return
+     */
     public String Previous() {
         if (getMethodNameorIteratorBinding() != null) {
             (mybean.AccessIteratorBinding(getMethodNameorIteratorBinding())).getRowSetIterator().previous();
@@ -48,6 +60,9 @@ public class Dml {
         return null;
     }
 
+    /**
+     * @return
+     */
     public String First() {
         if (getMethodNameorIteratorBinding() != null) {
             (mybean.AccessIteratorBinding(getMethodNameorIteratorBinding())).getRowSetIterator().first();
@@ -55,6 +70,9 @@ public class Dml {
         return null;
     }
 
+    /**
+     * @return
+     */
     public String Last() {
         if (getMethodNameorIteratorBinding() != null) {
             (mybean.AccessIteratorBinding(getMethodNameorIteratorBinding())).getRowSetIterator().last();
@@ -62,6 +80,9 @@ public class Dml {
         return null;
     }
 
+    /**
+     * @return
+     */
     public String Commit() {
         if (getMethodNameorIteratorBinding() != null) {
             try {
@@ -77,6 +98,9 @@ public class Dml {
         return null;
     }
 
+    /**
+     * @return
+     */
     public String Rollback() {
         if (getMethodNameorIteratorBinding() != null) {
             try {
@@ -92,25 +116,40 @@ public class Dml {
         return null;
     }
 
+    /**
+     * @return
+     */
     public String information() {
         mybean.Validate(mybean.getFacesContext(), "STB ..", "STB | Smart ToolBar has been Developed by 'Wael Abdeen'.",
                         4);
         return null;
     }
 
+    /**
+     * @param MethodNameorIteratorBinding
+     */
     public void setMethodNameorIteratorBinding(String MethodNameorIteratorBinding) {
         this.MethodNameorIteratorBinding = MethodNameorIteratorBinding;
     }
 
+    /**
+     * @return
+     */
     public String getMethodNameorIteratorBinding() {
         return MethodNameorIteratorBinding;
     }
 
 
+    /**
+     * @param InsertType
+     */
     public void setInsertType(String InsertType) {
         this.InsertType = InsertType;
     }
 
+    /**
+     * @return
+     */
     public String getInsertType() {
         return InsertType;
     }
